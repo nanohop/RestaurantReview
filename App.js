@@ -7,7 +7,7 @@ import {
   TextInput
 } from 'react-native'
 
-import Header from './Header'
+import Header from 'components/Header'
 
 const restaurants = [
   {name: 'React Cafe', address: '123 Anywhere St'},
