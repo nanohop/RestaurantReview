@@ -5,10 +5,18 @@ import {
   Text
 } from 'react-native'
 
+const restaurants = [
+  {name: 'React Cafe', address: '123 Anywhere St'},
+  {name: 'Fancy Restaurant', address: '799 Main St'},
+  {name: 'Taco Place', address: '550 Maple Rd'}
+]
+
 export default class App extends Component {
   render() {
     return (
-      <View>
+      <View style={{
+        flex: 1
+      }}>
         <Text style={{
           padding: 40,
           fontSize: 30,
@@ -17,15 +25,39 @@ export default class App extends Component {
           fontWeight: '300'
         }}>Restaurant Review</Text>
 
-        <Text>React Cafe</Text>
-        <Text style={{ color: 'grey'}}>
-          123 Anywhere St
-        </Text>
+        {
+          restaurants.map((place, index) => {
+            return (
+              <View key={place.name} style={{
+                flexDirection: 'row'
+              }}>
+                <View style={{
+                  flex: 1,
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}>
+                  <Text>{index + 1}</Text>
+                </View>
 
-        <Text>Fancy Restaurant</Text>
-        <Text style={{ color: 'grey'}}>
-          799 Main St
-        </Text>
+                <View style={{
+                  flexDirection: 'column',
+                  flex: 8
+                }}>
+                  <Text>{place.name}</Text>
+                  <Text style={{color: 'grey'}}>{place.address}</Text>
+                </View>
+
+                <View style={{
+                  flex: 1,
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}>
+                  <Text>Info</Text>
+                </View>
+              </View>
+            )
+          })
+        }
 
       </View>
     );
