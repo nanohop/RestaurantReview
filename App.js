@@ -6,7 +6,8 @@ import {
   StyleSheet,
   TextInput,
   ScrollView,
-  FlatList
+  FlatList,
+  Image
 } from 'react-native'
 
 import axios from 'axios'
@@ -14,6 +15,8 @@ import axios from 'axios'
 import Header from 'components/Header'
 
 import RestaurantRow from 'components/RestaurantRow'
+
+import PizzaImage from 'images/pizza.png'
 
 export default class App extends Component {
 
@@ -33,6 +36,13 @@ export default class App extends Component {
       <View style={{
         flex: 1
       }}>
+
+        <View style={{
+          marginTop: 40,
+          alignItems: 'center'
+        }}>
+          <Image source={PizzaImage} />
+        </View>
 
         <Header />
 
