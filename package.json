@@ -10,7 +10,8 @@
     "@babel/runtime": "^7.1.2",
     "axios": "^0.18.0",
     "react": "16.5.0",
-    "react-native": "0.57.1"
+    "react-native": "0.57.1",
+    "react-native-vector-icons": "^6.0.1"
   },
   "devDependencies": {
     "babel-jest": "23.6.0",
