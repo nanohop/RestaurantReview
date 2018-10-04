@@ -3,7 +3,8 @@ import React, {Component} from 'react';
 import {
   View,
   Text,
-  StyleSheet
+  StyleSheet,
+  TextInput
 } from 'react-native'
 
 import HeaderStyle from './HeaderStyle'
@@ -15,6 +16,11 @@ const restaurants = [
 ]
 
 export default class App extends Component {
+
+  state = {
+    search: null
+  }
+
   render() {
     return (
       <View style={{
@@ -22,8 +28,20 @@ export default class App extends Component {
       }}>
         <Text style={HeaderStyle.header}>Restaurant Review</Text>
 
+        <TextInput 
+          style={styles.input} 
+          placeholder="Live Search"
+          onChangeText={text => {
+            this.setState({ search: text })
+          }}
+          value={this.state.search}
+        />
+
         {
-          restaurants.map((place, index) => {
+          restaurants.filter(place => {
+            return !this.state.search ||
+              place.name.toLowerCase().indexOf(this.state.search.toLowerCase()) > -1
+          }).map((place, index) => {
             return (
               <View key={place.name} style={[
                 styles.row,
@@ -67,5 +85,15 @@ const styles = StyleSheet.create({
   },
   addressText: {
     color: 'grey'
+  },
+  input: {
+    marginBottom: 30,
+    padding: 10,
+    paddingHorizontal: 20,
+    fontSize: 16,
+    color: '#444',
+    borderBottomWidth: 1,
+    borderColor: '#ddd',
+    backgroundColor: '#F5F5F5'
   }
 })
