@@ -14,12 +14,8 @@ import Stars from 'components/Stars'
 
 export default class RestaurantRow extends Component {
 
-  state = {
-    showInfo: false
-  }
-
   infoPressed = () => {
-    this.setState({ showInfo: !this.state.showInfo })
+    this.props.navigation.navigate('Info')
   }
 
   render() {
@@ -55,23 +51,6 @@ export default class RestaurantRow extends Component {
 
           </View>
         </View>
-
-        {
-          this.state.showInfo &&
-          <View style={styles.info}>
-            <Text>Restaurant Info</Text>
-            <Image 
-              source={{ 
-                uri: `http://localhost:3000/images/${place.image}`,
-              }} 
-              style={{
-                flex: 1,
-                height: 100
-              }}
-              resizeMode="contain"
-            />
-          </View>
-        }
 
       </View>
     )
