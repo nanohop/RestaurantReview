@@ -22,6 +22,9 @@ export default class App extends Component {
   }
 
   render() {
+    console.log("search: ", this.state.search)
+    console.warn("search: ", this.state.search)
+    console.error("search: ", this.state.search)
     return (
       <View style={{
         flex: 1
