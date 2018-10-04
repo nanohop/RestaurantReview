@@ -79,7 +79,8 @@ const styles = StyleSheet.create({
   },
   nameAddress: {
     flexDirection: 'column',
-    flex: 8
+    flex: 8,
+    padding: 5
   },
   addressText: {
     color: 'grey'
