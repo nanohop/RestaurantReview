@@ -15,7 +15,9 @@ import Stars from 'components/Stars'
 export default class RestaurantRow extends Component {
 
   infoPressed = () => {
-    this.props.navigation.navigate('Info')
+    this.props.navigation.navigate('Info', {
+      place: this.props.place
+    })
   }
 
   render() {
