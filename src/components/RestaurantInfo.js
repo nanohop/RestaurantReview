@@ -6,6 +6,11 @@ import {
 } from 'react-native'
 
 export default class RestaurantInfo extends Component {
+
+  static navigationOptions = {
+    title: 'Restaurant Info'
+  }
+
   render() {
     return (
       <View>

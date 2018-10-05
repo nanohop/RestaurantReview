@@ -20,6 +20,10 @@ import PizzaImage from 'images/pizza.png'
 
 export default class RestaurantList extends Component {
 
+  static navigationOptions = {
+    header: null
+  }
+
   state = {
     search: null,
     restaurants: []
@@ -34,7 +38,8 @@ export default class RestaurantList extends Component {
 
     return (
       <View style={{
-        flex: 1
+        flex: 1,
+        backgroundColor: '#FFFFFF'
       }}>
 
         <View style={{
