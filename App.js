@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import { 
   createStackNavigator,
-  createTabNavigator
+  createBottomTabNavigator
 } from 'react-navigation'
 
 import Icon from 'react-native-vector-icons/FontAwesome'
@@ -28,7 +28,7 @@ const List = createStackNavigator({
 })
 
 
-export default createTabNavigator({
+export default createBottomTabNavigator({
   List: { screen: List },
   About: { screen: About }
 }, {
@@ -41,11 +41,11 @@ export default createTabNavigator({
           'About': 'info-circle'
         }[route]
         return <Icon name={name} color={tintColor} size={22} />
+      },
+      tabBarOptions: {
+        activeBackgroundColor: '#E6F0FA'
       }
     }
-  },
-  tabBarOptions: {
-    activeBackgroundColor: '#E6F0FA'
   }
 })
 
